@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:furnit_ar/core/constants/app_strings.dart';
 
 import 'presentation/home/views/home.dart';
 
@@ -8,7 +9,7 @@ class FurnitArApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: AppStrings.appName,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
