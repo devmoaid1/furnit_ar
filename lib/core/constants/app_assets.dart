@@ -14,4 +14,5 @@ abstract class AppAssets {
   static const noSearch = "assets/icons/no_search.svg";
   static const featureGraphics = "assets/icons/password.svg";
   static const gamingChair = "assets/icons/gaming_chair.svg";
+  static const logoTyped = "assets/icons/logo_typed.svg";
 }
