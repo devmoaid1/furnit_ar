@@ -12,7 +12,7 @@ abstract class AppAssets {
   static const tableIcon = "assets/icons/table.svg";
   static const userIcon = "assets/icons/user.svg";
   static const noSearch = "assets/icons/no_search.svg";
-  static const featureGraphics = "assets/icons/password.svg";
+  static const featureGraphics = "assets/icons/feature_graphics.svg";
   static const gamingChair = "assets/icons/gaming_chair.svg";
   static const logoTyped = "assets/icons/logo_typed.svg";
 }
