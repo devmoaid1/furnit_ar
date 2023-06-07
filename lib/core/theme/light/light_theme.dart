@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:furnit_ar/core/constants/text_styles.dart';
 import 'package:furnit_ar/core/theme/light/app_colors_light.dart';
 
 const lightColorScheme = ColorScheme(
@@ -40,4 +41,10 @@ final ThemeData lightTheme = ThemeData(
     scaffoldBackgroundColor: AppColorsLight.kScaffoldColor,
     primaryColor: AppColorsLight.kPrimaryColor,
     useMaterial3: true,
-    textTheme: const TextTheme());
+    textTheme: TextTheme(
+        bodyLarge: Styles.kbodyLargeTextStyle,
+        bodyMedium: Styles.kbodyMediumTextStyle,
+        bodySmall: Styles.kbodysmallTextStyle,
+        headlineLarge: Styles.kHeadingLargeTextStyle,
+        headlineMedium: Styles.kHeadingMediumTextStyle,
+        headlineSmall: Styles.kHeadingSmallTextStyle));
