@@ -50,8 +50,7 @@ class FurnitArTextField extends StatelessWidget {
       initialValue: intialValue,
       obscureText: obsecure ?? false,
       cursorHeight: 20.h,
-      cursorRadius: AppLayouts.kDefaultBorderRadius,
-      style: context.appTextTheme.bodyMedium
+      style: context.appTextTheme.bodyLarge
           ?.copyWith(color: AppColorsLight.kIconColor),
       cursorColor: AppColorsLight.kPrimaryColor,
       decoration: InputDecoration(

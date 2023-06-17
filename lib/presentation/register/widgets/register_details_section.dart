@@ -62,6 +62,58 @@ class _RegisterDetailsSectionState extends State<RegisterDetailsSection> {
                           iconPath: AppAssets.userIcon,
                         )),
                     fillColor: context.appTheme.colorScheme.onPrimaryContainer,
+                  ),
+                  40.vSpace,
+                  Text(
+                    'Email',
+                    style: context.appTextTheme.bodyLarge!
+                        .copyWith(fontWeight: FontWeight.w600),
+                  ),
+                  10.vSpace,
+                  FurnitArTextField(
+                    name: 'email',
+                    hintText: 'moaidmohamed123@gmail.com',
+                    prefixIcon: IconButton(
+                        onPressed: () {},
+                        icon: const CustomSvgVisual(
+                          iconPath: AppAssets.emailIcon,
+                        )),
+                    fillColor: context.appTheme.colorScheme.onPrimaryContainer,
+                  ),
+                  40.vSpace,
+                  Text(
+                    'Phone Number',
+                    style: context.appTextTheme.bodyLarge!
+                        .copyWith(fontWeight: FontWeight.w600),
+                  ),
+                  10.vSpace,
+                  FurnitArTextField(
+                    name: 'phoneNumber',
+                    hintText: '01033266355',
+                    prefixIcon: IconButton(
+                        onPressed: () {},
+                        icon: const CustomSvgVisual(
+                          iconPath: AppAssets.phoneIcon,
+                        )),
+                    fillColor: context.appTheme.colorScheme.onPrimaryContainer,
+                  ),
+                  40.vSpace,
+                  Text(
+                    'Password',
+                    style: context.appTextTheme.bodyLarge!
+                        .copyWith(fontWeight: FontWeight.w600),
+                  ),
+                  10.vSpace,
+                  FurnitArTextField(
+                    name: 'password',
+                    hintText: 'type strong pass',
+                    obsecure: true,
+                    prefixIcon: IconButton(
+                        onPressed: () {},
+                        icon: const CustomSvgVisual(
+                          iconPath: AppAssets.passwordIcon,
+                        )),
+                    fillColor: context.appTheme.colorScheme.onPrimaryContainer,
                   )
                 ],
               ))

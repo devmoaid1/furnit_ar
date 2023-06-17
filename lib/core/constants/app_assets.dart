@@ -8,6 +8,7 @@ abstract class AppAssets {
   static const loginIcon = "assets/icons/login.svg";
   static const logoutIcon = "assets/icons/logout.svg";
   static const passwordIcon = "assets/icons/password.svg";
+  static const phoneIcon = "assets/icons/phone.svg";
   static const settingsIcon = "assets/icons/settings.svg";
   static const tableIcon = "assets/icons/table.svg";
   static const userIcon = "assets/icons/user.svg";
