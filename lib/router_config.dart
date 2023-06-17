@@ -10,10 +10,12 @@ class AppRouter {
       debugLogDiagnostics: true,
       routes: [
         GoRoute(
+          name: AppRoutes.intialRoute,
           path: AppRoutes.intialRoute,
           builder: (context, state) => const SplashView(),
         ),
         GoRoute(
+          name: AppRoutes.registerRoute,
           path: AppRoutes.registerRoute,
           builder: (context, state) => const RegisterView(),
         ),

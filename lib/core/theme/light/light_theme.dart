@@ -37,6 +37,7 @@ const lightColorScheme = ColorScheme(
 );
 
 final ThemeData lightTheme = ThemeData(
+    fontFamily: 'Montserrat',
     colorScheme: lightColorScheme,
     scaffoldBackgroundColor: AppColorsLight.kScaffoldColor,
     primaryColor: AppColorsLight.kPrimaryColor,

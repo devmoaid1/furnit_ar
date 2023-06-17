@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:furnit_ar/core/utils/extensions/app_context.dart';
 import 'package:furnit_ar/presentation/register/widgets/register_body.dart';
 
 class RegisterView extends StatelessWidget {
@@ -6,8 +7,9 @@ class RegisterView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: RegisterBody(),
+    return Scaffold(
+      backgroundColor: context.appTheme.primaryColor,
+      body: const RegisterBody(),
     );
   }
 }

@@ -1,27 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:furnit_ar/core/utils/extensions/app_context.dart';
+import 'package:furnit_ar/core/utils/extensions/spaces.dart';
+
+import 'register_details_section.dart';
 
 class RegisterBody extends StatelessWidget {
   const RegisterBody({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Container(
-          color: context.appTheme.primaryColor,
+    return SafeArea(
+      child: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            31.vSpace,
+            Text(
+              'Sign Up',
+              style: context.appTextTheme.headlineLarge!.copyWith(
+                  color: context.appTheme.colorScheme.onPrimaryContainer),
+            ),
+            50.vSpace,
+            const RegisterDetailsSection()
+          ],
         ),
-        Positioned(
-          bottom: 0,
-          child: Container(
-            height: context.screenHeight * 0.65,
-            decoration: BoxDecoration(
-                color: context.appTheme.colorScheme.onPrimaryContainer,
-                borderRadius:
-                    const BorderRadius.only(topLeft: Radius.circular(68))),
-          ),
-        )
-      ],
+      ),
     );
   }
 }

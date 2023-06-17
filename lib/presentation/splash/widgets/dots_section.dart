@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:furnit_ar/core/constants/app_routes.dart';
 import 'package:furnit_ar/core/utils/extensions/spaces.dart';
+import 'package:go_router/go_router.dart';
 
 import 'dot_circle.dart';
 
@@ -52,12 +54,20 @@ class _DotsSectionState extends State<DotsSection>
     ));
 
     _animationController.repeat(reverse: true);
+    navigateToNextScreen();
+  }
+
+  Future<void> navigateToNextScreen() async {
+    await Future.delayed(
+      const Duration(seconds: 3),
+      () => context.pushReplacementNamed(AppRoutes.registerRoute),
+    );
   }
 
   @override
   void dispose() {
-    super.dispose();
     _animationController.dispose();
+    super.dispose();
   }
 
   @override
