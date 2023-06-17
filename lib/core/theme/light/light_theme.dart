@@ -5,9 +5,9 @@ import 'package:furnit_ar/core/theme/light/app_colors_light.dart';
 const lightColorScheme = ColorScheme(
   brightness: Brightness.light,
   primary: AppColorsLight.kPrimaryColor,
-  onPrimary: Color(0xFFFFFFFF),
+  onPrimary: AppColorsLight.kPrimaryColor,
   primaryContainer: Color(0xFF94F1FF),
-  onPrimaryContainer: Color(0xFF001F24),
+  onPrimaryContainer: Color(0xFFFFFFFF),
   secondary: AppColorsLight.kSecondaryColor,
   onSecondary: Color(0xFFFFFFFF),
   secondaryContainer: Color(0xFFB9F474),
