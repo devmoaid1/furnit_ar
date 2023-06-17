@@ -12,9 +12,13 @@ class RegisterBody extends StatelessWidget {
           color: context.appTheme.primaryColor,
         ),
         Positioned(
+          bottom: 0,
           child: Container(
             height: context.screenHeight * 0.65,
-            color: context.appTheme.colorScheme.onPrimaryContainer,
+            decoration: BoxDecoration(
+                color: context.appTheme.colorScheme.onPrimaryContainer,
+                borderRadius:
+                    const BorderRadius.only(topLeft: Radius.circular(68))),
           ),
         )
       ],
