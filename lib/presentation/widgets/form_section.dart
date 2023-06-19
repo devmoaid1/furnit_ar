@@ -42,6 +42,7 @@ class FormSection extends StatelessWidget {
         10.vSpace,
         FurnitArTextField(
           name: fieldName,
+          validator: validator,
           hintText: hintText,
           onChanged: onChanged,
           intialValue: intialValue,

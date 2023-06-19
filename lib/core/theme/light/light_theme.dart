@@ -36,12 +36,33 @@ const lightColorScheme = ColorScheme(
   scrim: Color(0xFF000000),
 );
 
+ElevatedButtonThemeData customElevatedButtonTheme = ElevatedButtonThemeData(
+  style: ButtonStyle(
+    backgroundColor: MaterialStateProperty.all<Color>(Colors.transparent),
+    overlayColor: MaterialStateProperty.all<Color>(
+        Colors.transparent), // Set the background color
+    // Set the text color
+    padding: MaterialStateProperty.all<EdgeInsets>(
+        const EdgeInsets.all(16.0)), // Set the button padding
+    textStyle: MaterialStateProperty.all<TextStyle>(Styles.kbodyMediumTextStyle
+            .copyWith(color: Colors.white) // Set the text style
+        ),
+    // Set the button elevation
+    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+      RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10), // Set the button border radius
+      ),
+    ),
+  ),
+);
+
 final ThemeData lightTheme = ThemeData(
     fontFamily: 'Montserrat',
     colorScheme: lightColorScheme,
     scaffoldBackgroundColor: AppColorsLight.kScaffoldColor,
     primaryColor: AppColorsLight.kPrimaryColor,
     useMaterial3: true,
+    elevatedButtonTheme: customElevatedButtonTheme,
     textTheme: TextTheme(
         bodyLarge: Styles.kbodyLargeTextStyle,
         bodyMedium: Styles.kbodyMediumTextStyle,
