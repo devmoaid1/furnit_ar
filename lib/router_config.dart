@@ -1,4 +1,5 @@
 import 'package:furnit_ar/core/constants/app_routes.dart';
+import 'package:furnit_ar/presentation/login/views/login_view.dart';
 import 'package:furnit_ar/presentation/register/views/register_view.dart';
 import 'package:go_router/go_router.dart';
 
@@ -18,6 +19,11 @@ class AppRouter {
           name: AppRoutes.registerRoute,
           path: AppRoutes.registerRoute,
           builder: (context, state) => const RegisterView(),
+        ),
+        GoRoute(
+          name: AppRoutes.loginRoute,
+          path: AppRoutes.loginRoute,
+          builder: (context, state) => const LoginView(),
         ),
       ]);
 

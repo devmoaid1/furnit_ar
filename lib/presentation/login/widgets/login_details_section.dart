@@ -1,36 +1,35 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
-import 'package:furnit_ar/core/constants/app_routes.dart';
-import 'package:furnit_ar/core/constants/layouts.dart';
 import 'package:furnit_ar/core/utils/extensions/app_context.dart';
 import 'package:furnit_ar/core/utils/extensions/spaces.dart';
-import 'package:furnit_ar/presentation/register/widgets/register_form.dart';
-import 'package:furnit_ar/presentation/widgets/custom_button.dart';
+import 'package:furnit_ar/presentation/login/widgets/login_form.dart';
 import 'package:go_router/go_router.dart';
 
-class RegisterDetailsSection extends StatefulWidget {
-  const RegisterDetailsSection({
-    super.key,
-  });
+import '../../../core/constants/app_routes.dart';
+import '../../../core/constants/layouts.dart';
+import '../../widgets/custom_button.dart';
+
+class LoginDetailsSection extends StatefulWidget {
+  const LoginDetailsSection({super.key});
 
   @override
-  State<RegisterDetailsSection> createState() => _RegisterDetailsSectionState();
+  State<LoginDetailsSection> createState() => _LoginDetailsSectionState();
 }
 
-class _RegisterDetailsSectionState extends State<RegisterDetailsSection> {
-  late GlobalKey<FormBuilderState> _formKey;
+class _LoginDetailsSectionState extends State<LoginDetailsSection> {
+  late GlobalKey<FormBuilderState> _loginFormKey;
 
   @override
   void initState() {
     super.initState();
-    _formKey = GlobalKey<FormBuilderState>();
+    _loginFormKey = GlobalKey<FormBuilderState>();
   }
 
   @override
   void dispose() {
-    if (_formKey.currentState != null) {
-      _formKey.currentState!.dispose();
+    if (_loginFormKey.currentState != null) {
+      _loginFormKey.currentState!.dispose();
     }
     super.dispose();
   }
@@ -49,11 +48,24 @@ class _RegisterDetailsSectionState extends State<RegisterDetailsSection> {
           physics: const BouncingScrollPhysics(),
           child: Column(
             children: [
-              RegisterForm(formKey: _formKey),
+              40.vSpace,
+              Text(
+                'Login',
+                style: context.appTextTheme.headlineLarge,
+              ),
+              const SizedBox(
+                width: double.infinity,
+              ),
+              LoginForm(formKey: _loginFormKey),
               30.vSpace,
               CustomButton(
+                onPressed: () {
+                  if (_loginFormKey.currentState!.validate()) {
+                    print('valid');
+                  }
+                },
                 child: Text(
-                  'Sign Up',
+                  'Login',
                   style: context.appTextTheme.bodyMedium!
                       .copyWith(color: Colors.white),
                 ),
@@ -62,14 +74,14 @@ class _RegisterDetailsSectionState extends State<RegisterDetailsSection> {
               Center(
                 child: RichText(
                     text: TextSpan(
-                  text: 'Do have an account? ',
+                  text: 'Don`t have an account? ',
                   style: context.appTextTheme.bodyMedium,
                   children: [
                     TextSpan(
-                        text: 'Login',
+                        text: 'Sign Up',
                         recognizer: TapGestureRecognizer()
                           ..onTap = () => context
-                              .pushReplacementNamed(AppRoutes.loginRoute),
+                              .pushReplacementNamed(AppRoutes.registerRoute),
                         style: context.appTextTheme.bodyMedium!
                             .copyWith(color: context.appTheme.primaryColor)),
                   ],

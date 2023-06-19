@@ -39,8 +39,11 @@ const lightColorScheme = ColorScheme(
 ElevatedButtonThemeData customElevatedButtonTheme = ElevatedButtonThemeData(
   style: ButtonStyle(
     backgroundColor: MaterialStateProperty.all<Color>(Colors.transparent),
-    overlayColor: MaterialStateProperty.all<Color>(
-        Colors.transparent), // Set the background color
+    overlayColor: MaterialStateProperty.all<Color>(Colors.transparent),
+    foregroundColor: MaterialStateProperty.all<Color>(Colors.transparent),
+    splashFactory: NoSplash.splashFactory,
+    surfaceTintColor: MaterialStateProperty.all<Color>(Colors.transparent),
+    // Set the background color
     // Set the text color
     padding: MaterialStateProperty.all<EdgeInsets>(
         const EdgeInsets.all(16.0)), // Set the button padding

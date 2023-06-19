@@ -9,14 +9,17 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      height: 58.h,
-      decoration: BoxDecoration(
-        gradient: AppColorsLight.kDefaultLinearGradient,
-        borderRadius: BorderRadius.circular(10),
+    return InkWell(
+      onTap: onPressed,
+      child: Container(
+        width: double.infinity,
+        height: 58.h,
+        decoration: BoxDecoration(
+          gradient: AppColorsLight.kDefaultLinearGradient,
+          borderRadius: BorderRadius.circular(10),
+        ),
+        child: ElevatedButton(onPressed: null, child: child),
       ),
-      child: ElevatedButton(onPressed: onPressed, child: child),
     );
   }
 }
