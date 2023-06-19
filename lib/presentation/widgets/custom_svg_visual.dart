@@ -18,9 +18,9 @@ class CustomSvgVisual extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
+      height: height,
+      width: width,
       child: SvgPicture.asset(
-        height: height,
-        width: width,
         iconPath,
         fit: boxFit ?? BoxFit.contain,
       ),

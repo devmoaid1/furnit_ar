@@ -57,7 +57,7 @@ class FurnitArTextField extends StatelessWidget {
         isDense: true,
         hintText: hintText,
         hintStyle: context.appTextTheme.bodyMedium
-            ?.copyWith(color: AppColorsLight.kIconColor),
+            ?.copyWith(color: AppColorsLight.kIconColor.withOpacity(0.8)),
         errorStyle: context.appTextTheme.bodyMedium
             ?.copyWith(color: AppColorsLight.kErrorColor),
         filled: true,

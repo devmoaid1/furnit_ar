@@ -10,20 +10,18 @@ class RegisterBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            31.vSpace,
-            Text(
-              'Sign Up',
-              style: context.appTextTheme.headlineLarge!.copyWith(
-                  color: context.appTheme.colorScheme.onPrimaryContainer),
-            ),
-            50.vSpace,
-            const RegisterDetailsSection()
-          ],
-        ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          15.vSpace,
+          Text(
+            'Sign Up',
+            style: context.appTextTheme.headlineLarge!.copyWith(
+                color: context.appTheme.colorScheme.onPrimaryContainer),
+          ),
+          30.vSpace,
+          const RegisterDetailsSection()
+        ],
       ),
     );
   }

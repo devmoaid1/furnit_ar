@@ -5,7 +5,7 @@ import 'package:furnit_ar/core/constants/layouts.dart';
 import 'package:furnit_ar/core/utils/extensions/app_context.dart';
 import 'package:furnit_ar/core/utils/extensions/spaces.dart';
 import 'package:furnit_ar/presentation/widgets/custom_svg_visual.dart';
-import 'package:furnit_ar/presentation/widgets/furnitar_textfield.dart';
+import 'package:furnit_ar/presentation/widgets/form_section.dart';
 
 class RegisterDetailsSection extends StatefulWidget {
   const RegisterDetailsSection({
@@ -33,91 +33,70 @@ class _RegisterDetailsSectionState extends State<RegisterDetailsSection> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: context.screenHeight * 0.85,
-      padding: AppLayouts.kScaffoldPadding,
-      decoration: BoxDecoration(
-          color: context.appTheme.scaffoldBackgroundColor,
-          borderRadius: const BorderRadius.only(topLeft: Radius.circular(68))),
-      child: Column(
-        children: [
-          FormBuilder(
-              key: _formKey,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  50.vSpace,
-                  Text(
-                    'Full Name',
-                    style: context.appTextTheme.bodyLarge!
-                        .copyWith(fontWeight: FontWeight.w600),
-                  ),
-                  10.vSpace,
-                  FurnitArTextField(
-                    name: 'fullName',
-                    hintText: 'Moaid Mohamed',
-                    prefixIcon: IconButton(
-                        onPressed: () {},
-                        icon: const CustomSvgVisual(
-                          iconPath: AppAssets.userIcon,
-                        )),
-                    fillColor: context.appTheme.colorScheme.onPrimaryContainer,
-                  ),
-                  40.vSpace,
-                  Text(
-                    'Email',
-                    style: context.appTextTheme.bodyLarge!
-                        .copyWith(fontWeight: FontWeight.w600),
-                  ),
-                  10.vSpace,
-                  FurnitArTextField(
-                    name: 'email',
-                    hintText: 'moaidmohamed123@gmail.com',
-                    prefixIcon: IconButton(
-                        onPressed: () {},
-                        icon: const CustomSvgVisual(
-                          iconPath: AppAssets.emailIcon,
-                        )),
-                    fillColor: context.appTheme.colorScheme.onPrimaryContainer,
-                  ),
-                  40.vSpace,
-                  Text(
-                    'Phone Number',
-                    style: context.appTextTheme.bodyLarge!
-                        .copyWith(fontWeight: FontWeight.w600),
-                  ),
-                  10.vSpace,
-                  FurnitArTextField(
-                    name: 'phoneNumber',
-                    hintText: '01033266355',
-                    prefixIcon: IconButton(
-                        onPressed: () {},
-                        icon: const CustomSvgVisual(
-                          iconPath: AppAssets.phoneIcon,
-                        )),
-                    fillColor: context.appTheme.colorScheme.onPrimaryContainer,
-                  ),
-                  40.vSpace,
-                  Text(
-                    'Password',
-                    style: context.appTextTheme.bodyLarge!
-                        .copyWith(fontWeight: FontWeight.w600),
-                  ),
-                  10.vSpace,
-                  FurnitArTextField(
-                    name: 'password',
-                    hintText: 'type strong pass',
-                    obsecure: true,
-                    prefixIcon: IconButton(
-                        onPressed: () {},
-                        icon: const CustomSvgVisual(
-                          iconPath: AppAssets.passwordIcon,
-                        )),
-                    fillColor: context.appTheme.colorScheme.onPrimaryContainer,
-                  )
-                ],
-              ))
-        ],
+    return Expanded(
+      child: Container(
+        padding: AppLayouts.kScaffoldPadding,
+        decoration: BoxDecoration(
+            color: context.appTheme.scaffoldBackgroundColor,
+            borderRadius:
+                const BorderRadius.only(topLeft: Radius.circular(68))),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              FormBuilder(
+                  key: _formKey,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      50.vSpace,
+                      FormSection(
+                        title: 'Full Name',
+                        fieldName: 'fullName',
+                        hintText: 'Moaid Mohamed',
+                        prefixIcon: IconButton(
+                            onPressed: () {},
+                            icon: const CustomSvgVisual(
+                              iconPath: AppAssets.userIcon,
+                            )),
+                      ),
+                      40.vSpace,
+                      FormSection(
+                        title: 'Phone Number',
+                        fieldName: 'phone',
+                        hintText: '01033266355',
+                        prefixIcon: IconButton(
+                            onPressed: () {},
+                            icon: const CustomSvgVisual(
+                              iconPath: AppAssets.phoneIcon,
+                            )),
+                      ),
+                      40.vSpace,
+                      FormSection(
+                        title: 'Email Address',
+                        fieldName: 'email',
+                        hintText: 'moaidmohamed123@gmail.com',
+                        prefixIcon: IconButton(
+                            onPressed: () {},
+                            icon: const CustomSvgVisual(
+                              iconPath: AppAssets.emailIcon,
+                            )),
+                      ),
+                      40.vSpace,
+                      FormSection(
+                        title: 'Password',
+                        fieldName: 'password',
+                        hintText: 'type strong pass...',
+                        prefixIcon: IconButton(
+                            onPressed: () {},
+                            icon: const CustomSvgVisual(
+                              iconPath: AppAssets.passwordIcon,
+                            )),
+                      ),
+                    ],
+                  ))
+            ],
+          ),
+        ),
       ),
     );
   }
