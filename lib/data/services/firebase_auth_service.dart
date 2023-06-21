@@ -1,24 +1,16 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:furnit_ar/core/dependencies.dart';
 import 'package:furnit_ar/data/services/auth_base.dart';
 
 class FirebaseAuthService implements AuthBase {
-  final firebaseAuth = locator<FirebaseAuth>();
+  final FirebaseAuth firebaseAuth;
+  const FirebaseAuthService({required this.firebaseAuth});
+
   @override
   User getCurrentUser() {
     if (firebaseAuth.currentUser != null) {
       return firebaseAuth.currentUser!;
     } else {
       throw 'no user logged in ';
-    }
-  }
-
-  @override
-  bool isUserLoggedIn() {
-    if (firebaseAuth.currentUser != null) {
-      return true;
-    } else {
-      return false;
     }
   }
 

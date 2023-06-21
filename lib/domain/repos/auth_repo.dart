@@ -1,14 +1,16 @@
+import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:furnit_ar/core/errors/faliures.dart';
 
-abstract class AuthBase {
-  Future<void> loginWithEmail(
+abstract class AuthRepo {
+  Future<Either<Failure, void>> loginWithEmail(
       {required String email, required String password});
-  Future<void> register(
+  Future<Either<Failure, void>> register(
       {required String email,
       required String password,
       required String fullName,
       required String phone});
-  User getCurrentUser();
+  Either<Failure, User> getCurrentUser();
 
   Future<void> logout();
 }
