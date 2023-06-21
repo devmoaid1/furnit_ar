@@ -31,14 +31,14 @@ class FirebaseAuthService implements AuthBase {
   }
 
   @override
-  Future<void> register(
-      {required String email,
-      required String password,
-      required String fullName,
-      required String phone}) async {
+  Future<UserCredential> register({
+    required String email,
+    required String password,
+  }) async {
     try {
-      await firebaseAuth.createUserWithEmailAndPassword(
+      final result = await firebaseAuth.createUserWithEmailAndPassword(
           email: email, password: password);
+      return result;
     } on FirebaseAuthException catch (err) {
       throw err.message!;
     }

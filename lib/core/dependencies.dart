@@ -24,6 +24,6 @@ void setupLocator() {
       () => CustomerServiceImpl(firebaseApiService: locator()));
 
   // repos
-  locator
-      .registerLazySingleton<AuthRepo>(() => AuthRepoImpl(authBase: locator()));
+  locator.registerLazySingleton<AuthRepo>(
+      () => AuthRepoImpl(authBase: locator(), customerService: locator()));
 }
