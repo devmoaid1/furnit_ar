@@ -61,7 +61,7 @@ class _LoginDetailsSectionState extends State<LoginDetailsSection> {
               CustomButton(
                 onPressed: () {
                   if (_loginFormKey.currentState!.validate()) {
-                    print('valid');
+                    debugPrint('valid');
                   }
                 },
                 child: Text(
